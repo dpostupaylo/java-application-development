@@ -1,4 +1,4 @@
-package com.acme.dbo.txlog.printer;
+package com.acme.dbo.txlog.logger;
 
 import com.acme.dbo.txlog.message.Message;
 

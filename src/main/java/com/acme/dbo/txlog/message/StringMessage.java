@@ -1,14 +1,19 @@
 package com.acme.dbo.txlog.message;
 
-public class StringMessage implements Message{
-    private String message;
+import com.acme.dbo.txlog.decorator.Decorator;
+import com.acme.dbo.txlog.decorator.StringDecorator;
 
-    public StringMessage(String message){
+public class StringMessage implements Message {
+    private String message;
+    private final Decorator decorator;
+
+    public StringMessage(String message) {
         this.message = message;
+        this.decorator = new StringDecorator();
     }
 
     @Override
-    public String getDecoratedMessage(){
-        return String.format("string: %s", this.message);
+    public String getDecoratedMessage() {
+        return decorator.decorateMessage(this.message);
     }
 }
