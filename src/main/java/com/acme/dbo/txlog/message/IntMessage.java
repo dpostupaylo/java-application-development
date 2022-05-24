@@ -1,19 +1,15 @@
 package com.acme.dbo.txlog.message;
 
-import com.acme.dbo.txlog.decorator.Decorator;
-import com.acme.dbo.txlog.decorator.PrimitiveDecorator;
-
 public class IntMessage implements Message {
+    private final String PREFIX = "primitive:";
     private int message;
-    private final Decorator decorator;
 
     public IntMessage(int message) {
         this.message = message;
-        this.decorator = new PrimitiveDecorator();
     }
 
     @Override
     public String getDecoratedMessage() {
-        return decorator.decorateMessage(Integer.toString(this.message));
+        return String.format("%s %s", this.PREFIX, this.message);
     }
 }

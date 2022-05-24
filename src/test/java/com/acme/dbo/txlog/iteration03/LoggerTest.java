@@ -1,8 +1,10 @@
 package com.acme.dbo.txlog.iteration03;
 
+import com.acme.dbo.txlog.Facade;
 import com.acme.dbo.txlog.SysoutCaptureAndAssertionAbility;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 
 import java.io.IOException;
 
@@ -19,10 +21,7 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         resetOut();
     }
     //endregion
-
-    /*
-    TODO: implement Logger solution to match specification as tests
-
+/*
     @Test
     public void shouldLogIntegersArray() throws IOException {
         //region when
@@ -107,7 +106,5 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         assertSysoutContains(Integer.MAX_VALUE - 10);
         assertSysoutContains(11);
         //endregion
-    }
-
-    */
+    }*/
 }

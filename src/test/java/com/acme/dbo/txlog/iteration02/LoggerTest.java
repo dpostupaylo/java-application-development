@@ -22,8 +22,6 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     }
     //endregion
 
-
-
     @Test
     public void shouldLogSequentIntegersAsSum() throws IOException {
         //region when
@@ -33,7 +31,6 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         Facade.log("str 2");
         Facade.log(0);
         //endregion
-
         //region then
         assertSysoutEquals(
             "str 1\n" +
@@ -43,9 +40,6 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         );
         //endregion
     }
-        /*
-    TODO: implement Logger solution to match specification as tests
-
 
     @Test
     public void shouldLogCorrectlyIntegerOverflowWhenSequentIntegers() {
@@ -56,7 +50,6 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         Facade.log("str 2");
         Facade.log(0);
         //endregion
-
         //region then
         assertSysoutEquals(
             "str 1\n" +
@@ -77,7 +70,6 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         Facade.log("str 2");
         Facade.log(0);
         //endregion
-
         //region then
         assertSysoutEquals(
             "str 1\n" +
@@ -101,7 +93,6 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         Facade.log("str 3");
         Facade.log("str 3");
         //endregion
-
         //region then
         assertSysoutEquals(
             "str 1\n" +
@@ -110,8 +101,5 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
             "str 2\n" +
             "str 3 (x3)\n"
         );
-        //endregion
     }
-
-    */
 }
