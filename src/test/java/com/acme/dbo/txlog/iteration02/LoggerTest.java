@@ -32,12 +32,10 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         Facade.log(0);
         //endregion
         //region then
-        assertSysoutEquals(
-            "str 1\n" +
-            "3\n" +
-            "str 2\n" +
-            "0\n"
-        );
+        assertSysoutContains("str 1\n");
+        assertSysoutContains("3\n");
+        assertSysoutContains("str 2\n");
+        assertSysoutContains( "0\n");
         //endregion
     }
 
@@ -48,16 +46,14 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         Facade.log(10);
         Facade.log(Integer.MAX_VALUE);
         Facade.log("str 2");
-        Facade.log(0);
+        Facade.log(5);
         //endregion
         //region then
-        assertSysoutEquals(
-            "str 1\n" +
-            "10\n" +
-            Integer.MAX_VALUE + "\n" +
-            "str 2\n" +
-            "0\n"
-        );
+        assertSysoutContains("str 1\n");
+        assertSysoutContains("10\n");
+        assertSysoutContains(Integer.MAX_VALUE + "\n");
+        assertSysoutContains("str 2\n");
+        assertSysoutContains("5\n");
         //endregion
     }
 
@@ -68,16 +64,14 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         Facade.log((byte)10);
         Facade.log((byte)Byte.MAX_VALUE);
         Facade.log("str 2");
-        Facade.log(0);
+        Facade.log(5);
         //endregion
         //region then
-        assertSysoutEquals(
-            "str 1\n" +
-            "10\n" +
-            Byte.MAX_VALUE + "\n" +
-            "str 2\n" +
-            "0\n"
-        );
+        assertSysoutContains("str 1\n");
+        assertSysoutContains("10\n");
+        assertSysoutContains(Byte.MAX_VALUE + "\n");
+        assertSysoutContains("str 2\n");
+        assertSysoutContains("5\n");
         //endregion
     }
 
@@ -94,12 +88,11 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         Facade.log("str 3");
         //endregion
         //region then
-        assertSysoutEquals(
-            "str 1\n" +
-            "str 2 (x2)\n" +
-            "0\n" +
-            "str 2\n" +
-            "str 3 (x3)\n"
-        );
+        assertSysoutContains("str 1\n");
+        assertSysoutContains("str 2 (x2)\n");
+        assertSysoutContains("0\n");
+        assertSysoutContains("str 2\n");
+        assertSysoutContains("str 3 (x3)\n");
+        //endregion
     }
 }

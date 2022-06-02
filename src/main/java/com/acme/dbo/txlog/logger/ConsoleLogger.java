@@ -1,10 +1,8 @@
 package com.acme.dbo.txlog.logger;
 
-import com.acme.dbo.txlog.message.Message;
-
 public class ConsoleLogger implements Logger {
     @Override
-    public void log(Message message) {
-        System.out.println(message.getDecoratedMessage());
+    public void log(String message) {
+        System.out.println(message);
     }
 }

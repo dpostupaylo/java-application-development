@@ -1,16 +1,34 @@
 package com.acme.dbo.txlog.message;
 
 
-public class CharMessage implements Message{
-    private final String PREFIX = "char: ";
+public class CharMessage extends MessageDecorator implements Message{
     private char message;
 
     public CharMessage(char message){
+        super("char:");
         this.message = message;
     }
 
     @Override
     public String getDecoratedMessage(){
-        return String.format("%s %c", this.PREFIX, this.message);
+        return super.decorateMessage(Character.toString(this.message));
+    }
+
+    @Override
+    public void aggregate(Message message) {
+
+    }
+
+
+    @Override
+    public boolean equals(Object o){
+        if (o == null || this.getClass() != o.getClass())
+            return false;
+        CharMessage compareMessage = (CharMessage) o;
+
+        if (!(this.message == compareMessage.message))
+            return false;
+
+        return true;
     }
 }
