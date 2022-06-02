@@ -1,5 +1,6 @@
 package com.acme.dbo.txlog;
 
+import com.acme.dbo.txlog.exception.LogException;
 import com.acme.dbo.txlog.message.*;
 import com.acme.dbo.txlog.logger.ConsoleLogger;
 
@@ -7,24 +8,50 @@ public class Facade {
     static LogService logService = new LogService(new ConsoleLogger());
 
     public static void log(int message) {
-        logService.log(new IntMessage(message));
+        try {
+            logService.log(new IntMessage(message));
+        } catch (LogException exception) {
+            System.out.println(exception.getMessage());
+        }
     }
 
     public static void log(byte message) {
-        logService.log(new ByteMessage(message));
+        try {
+            logService.log(new ByteMessage(message));
+        } catch (LogException exception) {
+            System.out.println(exception.getMessage());
+        }
     }
 
     public static void log(char message) {
-        logService.log(new CharMessage(message));
+        try {
+            logService.log(new CharMessage(message));
+        } catch (LogException exception) {
+            System.out.println(exception.getMessage());
+        }
     }
 
     public static void log(String message) {
-        logService.log(new StringMessage(message));
+        try {
+            logService.log(new StringMessage(message));
+        } catch (LogException exception) {
+            System.out.println(exception.getMessage());
+        }
     }
 
     public static void log(boolean message) {
-        logService.log(new BooleanMessage(message));
+        try {
+            logService.log(new BooleanMessage(message));
+        } catch (LogException exception) {
+            System.out.println(exception.getMessage());
+        }
     }
 
-    public static void log(Object message) { logService.log(new ObjectMessage(message)); }
+    public static void log(Object message) {
+        try {
+            logService.log(new ObjectMessage(message));
+        } catch (LogException exception) {
+            System.out.println(exception.getMessage());
+        }
+    }
 }

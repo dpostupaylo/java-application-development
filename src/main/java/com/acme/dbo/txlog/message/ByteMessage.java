@@ -13,6 +13,7 @@ public class ByteMessage extends MessageDecorator  implements Message{
     public void aggregate(Message message) {
 
     }
+
     @Override
     public String getDecoratedMessage(){
         return super.decorateMessage(Byte.toString(this.message));
